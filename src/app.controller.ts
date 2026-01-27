@@ -1,6 +1,5 @@
-import { Controller, Get, UseFilters } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
-import { HttpExceptionFilter } from './common/exception/http.exception.filter';
 
 @Controller()
 export class AppController {
