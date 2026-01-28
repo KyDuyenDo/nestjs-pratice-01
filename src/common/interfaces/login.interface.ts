@@ -8,3 +8,9 @@ export interface LoginResponse {
     status: string,
     email: string,
 }
+
+export interface SignUpResponse {
+    status: string
+    email: string
+    username: string
+}
