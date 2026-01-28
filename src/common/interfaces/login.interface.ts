@@ -1,21 +1,20 @@
-
 export interface Login {
-    email: string
-    password: string
+  email: string;
+  password: string;
 }
 
 export interface LoginResponse {
-    status: string,
-    email: string,
+  status: string;
+  email: string;
 }
 
 export interface SignUpResponse {
-    status: string
-    email: string
-    username: string
+  status: string;
+  email: string;
+  username: string;
 }
 
 export interface Edit {
-    id: string
-    username: string
+  id: string;
+  username: string;
 }
