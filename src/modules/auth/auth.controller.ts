@@ -5,7 +5,7 @@ import {
   SignUpResponse,
 } from 'src/common/interfaces/login.interface';
 import { LoginDto } from './dto/login.dto';
-import { SignUpDto } from './dto/signUp.dto';
+import { SignUpDto } from './dto/signup.dto';
 
 @Controller('auth')
 export class AuthController {
