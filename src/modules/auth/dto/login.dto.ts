@@ -1,10 +1,10 @@
-import { IsEmail, IsString } from "class-validator";
-import { IsValidEmail } from "src/common/decorators/login.decorator";
+import { IsEmail, IsString } from 'class-validator';
+import { IsValidEmail } from 'src/common/decorators/login.decorator';
 
 export class LoginDto {
-    @IsEmail()
-    @IsValidEmail()
-    email: string
-    @IsString()
-    password: string
+  @IsEmail()
+  @IsValidEmail()
+  email: string;
+  @IsString()
+  password: string;
 }

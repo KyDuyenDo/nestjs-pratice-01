@@ -11,23 +11,19 @@ import databaseConfig from './modules/database/database.module';
 @Module({
   imports: [
     databaseConfig,
-    ConfigModule.forRoot(
-      {
-        envFilePath: '.env',
-        isGlobal: true,
-        validationSchema: configValidationSchema
-      }),
+    ConfigModule.forRoot({
+      envFilePath: '.env',
+      isGlobal: true,
+      validationSchema: configValidationSchema,
+    }),
     AuthModule,
-    UserModule
+    UserModule,
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
-    consumer
-      .apply(LoggerMiddleware)
-      .forRoutes('*');
+    consumer.apply(LoggerMiddleware).forRoutes('*');
   }
 }

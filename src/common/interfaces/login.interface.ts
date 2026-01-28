@@ -1,10 +1,9 @@
-
 export interface Login {
-    email: string
-    password: string
+  email: string;
+  password: string;
 }
 
 export interface LoginResponse {
-    status: string,
-    email: string,
+  status: string;
+  email: string;
 }
