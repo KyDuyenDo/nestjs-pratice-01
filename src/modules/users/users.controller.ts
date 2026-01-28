@@ -1,7 +1,7 @@
 import { Body, Controller, Delete, Get, Param, Put } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { User } from './entities/user.entity';
-import { Edit } from 'src/common/interfaces/login.interface';
+import { EditDetailInterface } from 'src/common/interfaces/login.interface';
 
 @Controller('users')
 export class UsersController {
@@ -11,7 +11,7 @@ export class UsersController {
     return this.usersService.getUserById(userId);
   }
   @Put('/edit')
-  async editUser(@Body() body: any): Promise<Edit> {
+  async editUser(@Body() body: any): Promise<EditDetailInterface> {
     const { username, id } = body;
     return this.usersService.editUsername(username, id);
   }

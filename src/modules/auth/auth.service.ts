@@ -8,7 +8,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { User } from '../users/entities/user.entity';
 import { Repository } from 'typeorm';
 import { BcryptService } from './bcrypt.service';
-import { SignUpResponse } from 'src/common/interfaces/login.interface';
+import { SignUpResponseInterface } from 'src/common/interfaces/login.interface';
 
 @Injectable()
 export class AuthService {
@@ -39,7 +39,7 @@ export class AuthService {
     email: string,
     password: string,
     username: string,
-  ): Promise<SignUpResponse> {
+  ): Promise<SignUpResponseInterface> {
     try {
       const existingUser = await this.userRepository.findOne({
         where: { email },
