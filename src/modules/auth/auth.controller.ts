@@ -12,7 +12,7 @@ export class AuthController {
   constructor(private readonly authService: AuthService) {}
   @Post('/login')
   async login(
-    @Body(new ValidationPipe()) loginDto: LoginDto,
+    @Body() loginDto: LoginDto,
   ): Promise<LoginResponse> {
     const { email, password } = loginDto;
     const user = await this.authService.login(email, password);
@@ -24,7 +24,7 @@ export class AuthController {
 
   @Post('/signUp')
   async signUp(
-    @Body(new ValidationPipe()) signUpDto: SignUpDto,
+    @Body() signUpDto: SignUpDto,
   ): Promise<SignUpResponse> {
     const { username, password, email } = signUpDto;
     const newUser = await this.authService.signUp(email, password, username);
