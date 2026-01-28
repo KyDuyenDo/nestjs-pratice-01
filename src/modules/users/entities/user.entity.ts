@@ -4,7 +4,7 @@ import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateCol
 export class User {
     @PrimaryGeneratedColumn('uuid')
     id: string
-    @Column()
+    @Column({ default: 'unknown' })
     username: string
     @Column({ unique: true })
     email: string

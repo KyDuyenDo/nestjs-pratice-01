@@ -14,3 +14,8 @@ export interface SignUpResponse {
     email: string
     username: string
 }
+
+export interface Edit {
+    id: string
+    username: string
+}
