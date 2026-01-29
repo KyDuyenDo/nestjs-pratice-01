@@ -1,12 +1,11 @@
 import { IsEmail, IsNotEmpty, IsString } from 'class-validator';
 import { IsValidEmail } from 'src/common/decorators/login.decorator';
 
-export class LoginDto {
+export class EditDetailDto {
   @IsNotEmpty()
-  @IsEmail()
-  @IsValidEmail()
-  email: string;
   @IsString()
+  id: string;
   @IsNotEmpty()
-  password: string;
+  @IsString()
+  username: string;
 }
