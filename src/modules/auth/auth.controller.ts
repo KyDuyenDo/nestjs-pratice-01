@@ -5,7 +5,8 @@ import {
   SignUpResponseInterface,
 } from 'src/common/interfaces/login.interface';
 import { LoginDto } from './dto/login.dto';
-import { SignUpDto } from './dto/signup.dto';
+import { RegisterDto } from './dto/register.dto';
+
 
 
 @Controller('auth')
@@ -24,7 +25,7 @@ export class AuthController {
   }
 
   @Post('/sign-up')
-  async signUp(@Body() signUpDto: SignUpDto): Promise<SignUpResponseInterface> {
+  async signUp(@Body() signUpDto: RegisterDto): Promise<SignUpResponseInterface> {
     return await this.authService.signUp(
       signUpDto.email,
       signUpDto.password,
