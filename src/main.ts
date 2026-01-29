@@ -10,7 +10,7 @@ async function bootstrap() {
   const port = configService.getOrThrow<number>('APP_PORT');
 
   app.useGlobalFilters(new HttpExceptionFilter());
-  
+
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,
@@ -18,7 +18,7 @@ async function bootstrap() {
       transform: true,
     }),
   );
-  
+
   await app.listen(port);
 }
 bootstrap();

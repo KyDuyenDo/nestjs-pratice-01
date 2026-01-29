@@ -11,22 +11,23 @@ import { SignUpDto } from './dto/signup.dto';
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
   @Post('/login')
-  async login(
-    @Body() loginDto: LoginDto,
-  ): Promise<LoginResponseInterface> {
-    const { email, password } = loginDto;
-    const user = await this.authService.login(email, password);
+  async login(@Body() loginDto: LoginDto): Promise<LoginResponseInterface> {
+    const user = await this.authService.login(
+      loginDto.email,
+      loginDto.password,
+    );
     return {
       status: 'successfully!',
       email: user.email,
     };
   }
 
-  @Post('/signUp')
-  async signUp(
-    @Body() signUpDto: SignUpDto,
-  ): Promise<SignUpResponseInterface> {
-    const { username, password, email } = signUpDto;
-    return await this.authService.signUp(email, password, username);
+  @Post('/sign-Up')
+  async signUp(@Body() signUpDto: SignUpDto): Promise<SignUpResponseInterface> {
+    return await this.authService.signUp(
+      signUpDto.email,
+      signUpDto.password,
+      signUpDto.username,
+    );
   }
 }

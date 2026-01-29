@@ -17,7 +17,10 @@ export class UsersService {
     return user;
   }
 
-  async editUsername(username: string, id: string): Promise<EditDetailInterface> {
+  async editUsername(
+    username: string,
+    id: string,
+  ): Promise<EditDetailInterface> {
     const res = await this.userRepository.update(
       { id: id },
       { username: username },
