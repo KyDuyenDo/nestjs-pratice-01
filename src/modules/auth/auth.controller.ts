@@ -22,7 +22,7 @@ export class AuthController {
     };
   }
 
-  @Post('/sign-Up')
+  @Post('/sign-up')
   async signUp(@Body() signUpDto: SignUpDto): Promise<SignUpResponseInterface> {
     return await this.authService.signUp(
       signUpDto.email,
